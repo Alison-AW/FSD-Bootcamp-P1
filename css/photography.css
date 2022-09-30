@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700&display=swap');
+
+@font-face {
+  font-family: PT Root;
+  src: url(/assets/photography/ptroot.woff2);
+}
+
+body {
+	font-family: PT Root;
+	font-size: 24px;
+	line-height: 1.5;
+
+	background-color: #000000;
+	color: #f2f2f2;
+}
+
+header {
+  font-family: Inconsolata;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 200000;
+  /* margin: 8px 0 0 0; */
+}
+
+menu {
+  font-size: 28px;
+  position: fixed;
+  top: 36px;
+  right: 24px;
+  margin: 0 32px;
+}
+
+a {
+	color: #f2f2f2;
+	text-underline-position: under;
+}
+
+h1, h2 {  
+  display: flex;
+  font-size: 16px;
+}
+
+h1 span, h2 span {
+  flex: 0 0 auto;
+  font-variation-settings: "wght" 800;
+}
+
+h1 span {
+  width: 150px;
+}
+
+h2 span {
+  width: 250px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: dense;
+  
+  min-height: 100vh;
+}
+
+section div.split {
+  position: relative;
+  overflow: hidden;
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+section div.split:first-child {
+  background-color: #111111;
+}
+
+section div.slides {
+  width: 500px;
+  height: 750px;
+  position: relative;
+  perspective: 800px;
+}
+
+section div.slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 750px;
+  box-shadow:  0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+section div.info {
+  padding: 32px;
+  max-width: 480px;
+}
+
+section h2 {
+  font-size: 32px;
+}
+
+section p {
+  margin: 32px 0 0 0;
+}
+
+section a {
+  background-color: #ffffff;
+  color: #111111;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 24px 8px 24px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+section a img {
+  margin: 0 0 0 8px;
+  width: 10px;
+  height: 16px;
+  object-fit: cover;
+  object-position: center right;
+  transition: width 0.25s;
+}
+
+section a:hover img {
+  width: 25px;
+}
+
+
+section.alternative div.split:first-child {
+  grid-column: 2;
+}
+
+section.alternative div.split:last-child {
+  grid-column:  1;
+}
+
+footer {
+  font-family: Inconsolata;
+	font-size: 16px;
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	margin: 24px 32px;
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding: 40px 0 0 0;
+    display: block;
+    min-height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  section div.slides {
+    margin: 60px 0 60px 0;
+  }
+  
+  section div.slides, section img {
+    max-width: 80vw;
+    max-height: 120vw;
+  }
+}
